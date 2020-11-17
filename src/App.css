@@ -1,0 +1,21 @@
+header{
+  /* min-height: 50px;
+  width: 100%;
+  /* background-color: white; */
+  /* padding: 0 3rem .7rem;
+  border-bottom: 2px solid #00b7de;   */
+}
+body{
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  /* background-color: #D8D8D8; */
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
