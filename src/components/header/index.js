@@ -1,10 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import { useHistory } from 'react-router-dom';
 import {   useDispatch } from 'react-redux'
 import * as Types from '../../js/constants'
-
+import "./header.css"
 function Header() { 
-
+  const [showContact,setShowContact]=useState(false);
 const history = useHistory()
 const dispatch = useDispatch();
   const home = () => { 
@@ -25,8 +25,20 @@ const dispatch = useDispatch();
     }
   return (
     <>
-    <header   className="LogoImagHeader"> 
-      <a onClick= {home}>  <img  className="LogoImag" src="geeks-logo.png" alt="logo"/>    </a> 
+    <header   className="LogoImagHeader row"> 
+      <div className="col-9">
+        <a onClick= {home}>  <img  className="LogoImag" src="geeks-logo.png" alt="logo"/>    </a> 
+      </div>
+      <div className="col-1">
+        <a href="https://api.whatsapp.com/send?phone=9933445566&text=Hi!%20I%20am%20your%20client"><button className="whatsappIcon"><i className="fab fa-whatsapp"></i></button></a>
+      </div>
+      <div className="col-2">
+        {showContact?
+        <button className="ContactButtonBlue"onClick={()=>setShowContact(false)}><i className="fas fa-phone-volume"></i>9922334455</button>:
+        <button className="ContactButton"onClick={()=>setShowContact(true)}><i className="fas fa-phone-volume"></i>Contact us</button>}
+        </div>
+        
+     
     </header>
     </>
   );

@@ -20,6 +20,10 @@ function QuoteDetailthird(props) {
   if (txt1 == "") { txt = txt2; } else { txt = txt1; };
 
   useEffect(() => {
+    if (!Object.keys(storeData.Model_type).includes(txt1)){
+      history.push('/quotedetailfourth')
+    }
+      
     console.log('-------------------third-------------------------------');
     console.log(txt1);
     console.log(txt2);
@@ -27,16 +31,19 @@ function QuoteDetailthird(props) {
     console.log('****************************************************')
     console.log(storeData);
 
-    if (!Object.keys(storeData.Model_type).includes(txt))
-      history.push('/quotedetailfourth')
+    
   }, []);
-
+  var txtthis = storeData.selectedModelType;
   const goNavigation = (clickedItem) => {
 
     dispatch({ type: Types.SET_SELECTED_ITEM, payload: { selectedItem: clickedItem, selectedModelType: clickedItem } })
 
     // console.log(clickedItem);
-    history.push('/quotedetailfourth')
+    if(Object.keys(storeData.Color).includes(clickedItem)){
+      history.push('/quotedetailfourth');
+    }else{
+      history.push('/quotedetailfive');
+    }
   }
 
   return (

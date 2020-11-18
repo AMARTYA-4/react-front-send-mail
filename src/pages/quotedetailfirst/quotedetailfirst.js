@@ -9,13 +9,27 @@ import style from "./quotedetailfirst.module.css";
 
 
 function QuoteDetailFirst(props) {
-  const storeData = useSelector(store => store.DeviceType)
+  const storeData = useSelector(store => store)
   const dispatch = useDispatch()
   const history = useHistory();
+
+  var txt1 = storeData.selectedDeviceType;
+  
+  
+  var txt4 = storeData.selectedColorType;
+
   const goNavigation = (clickedItem) => {
     dispatch({ type: Types.SET_SELECTED_ITEM, payload: { selectedItem: clickedItem, selectedDeviceType: clickedItem } })
 
-    history.push('/quotedetailsecond');
+    if (Object.keys(storeData.Classification).includes(clickedItem)){
+      history.push('/quotedetailsecond')
+    }else if(Object.keys(storeData.Model_type).includes(clickedItem)){
+      history.push('/quotedetailthird');
+    }else if(Object.keys(storeData.Color).includes(clickedItem)){
+      history.push('/quotedetailfourth');
+    }else{
+      history.push('/quotedetailfive');
+    }
   }
 
 
@@ -33,7 +47,7 @@ function QuoteDetailFirst(props) {
         <div className='box_container'>
           <div className='boxes'>
 
-            {Object.keys(storeData).map((item, index) => {
+            {Object.keys(storeData.DeviceType).map((item, index) => {
               return (
                
                 

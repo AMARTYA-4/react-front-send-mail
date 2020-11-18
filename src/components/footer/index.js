@@ -99,7 +99,7 @@ function Footer(props) {
       <div className={`footer ${state.disable && `hidden`}`}>
         <div className="viewbutton" onClick={toggle}>{now}% Progress</div>
         <div className="footer_progress">
-          <ProgressBar style={{ width: "100%" }} striped variant="primary" animated now={now} label={`${now}%`} />
+          <ProgressBar style={{ width: "100%",height:"20px" }} striped variant="info" animated now={now} label={`${now}%`} />
         </div>
         <div className="desktop">
           <div className="footer_button">

@@ -83,7 +83,7 @@ function QuoteDetailFive(props) {
 
             {storeData.Issue[txt] && Object.keys(storeData.Issue[txt]).map((item, index) => {
               return (
-                <div>
+                <div key={index}>
                   <HtmlTooltip placement="right-start"
                     title={
                       <React.Fragment>

@@ -15,7 +15,12 @@ function QuoteDetailFourth(props) {
   var txt2=storeData.selectedItem;
   var txt ;
   if(txt1){txt=txt1; }else{txt=txt2;}; 
-  useEffect(() => {  console.log('-------------------fourth-------------------------------'); 
+  useEffect(() => { 
+    if (!Object.keys(storeData.Color).includes(txt1)){
+      history.push('/quotedetailfive')
+    }
+      
+    console.log('-------------------fourth-------------------------------'); 
   console.log(txt1);
   console.log(txt2);
   console.log(txt);
@@ -23,8 +28,7 @@ function QuoteDetailFourth(props) {
   console.log(storeData)
   console.log("------------------------------------------------------------------------------")
    
-    if (!Object.keys(storeData.Color).includes(txt))
-      history.push('/quotedetailfive')
+    
   }, [])
 
   const goNavigation = (clickedItem) => {

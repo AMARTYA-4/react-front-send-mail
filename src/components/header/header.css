@@ -1,0 +1,55 @@
+.ContactButton{
+    width: 150px;
+    margin:3px;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 5px 14px;
+    color:rgb(243, 242, 242);
+    border:2px solid rgb(211, 3, 3);
+    background-color: rgb(238, 23, 23);
+    background-blend-mode: soft-light;
+}
+.ContactButton:hover{
+    width: 150px;
+    margin:3px;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 5px 14px;
+    color:whitesmoke;
+    border:2px solid rgb(6, 206, 212);
+    background-color: rgb(98, 210, 238);
+}
+.ContactButtonBlue{
+    width: 150px;
+    margin:3px;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 5px 14px;
+    color:rgb(243, 242, 242);
+    border:2px solid rgb(235, 1, 1);
+    background-color: rgb(238, 23, 23);
+}
+.ContactButtonBlue:hover{
+    width: 150px;
+    margin:3px;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 5px 14px;
+    color:whitesmoke;
+    border:2px solid rgb(6, 206, 212);
+    background-color: rgb(98, 210, 238);
+}
+.whatsappIcon{
+    margin:3px;
+    font-size: 28px;
+    font-weight: 500;
+    color: whitesmoke;
+    padding: 0px 9px;
+    background-color: rgb(38, 124, 16);
+    border-radius: 50%;
+    border:2px solid rgb(25, 128, 5);
+}

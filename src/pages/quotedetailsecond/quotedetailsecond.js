@@ -17,9 +17,11 @@ function QuoteDetailSecond(props) {
   var txt;
   if (txt1 !== "") { txt = txt1; } else { txt = txt2; };
 
+  var txtthis = storeData.selectedClassificationType;
+
   useEffect(() => {
 
-    if (!Object.keys(storeData.Classification).includes(txt)) {
+    if (!Object.keys(storeData.Classification).includes(txt1)) {
       console.log('-------------------second-------------------------------');
       console.log(txt1);
       console.log(txt2);
@@ -28,12 +30,19 @@ function QuoteDetailSecond(props) {
       console.log(storeData)
       history.push('/quotedetailthird')
     }
+    
   }, [])
 
   const goNavigation = (clickedItem) => {
     dispatch({ type: Types.SET_SELECTED_ITEM, payload: { selectedItem: clickedItem, selectedClassificationType: clickedItem } })
 
-    history.push('/quotedetailthird')
+    if(Object.keys(storeData.Model_type).includes(clickedItem)){
+      history.push('/quotedetailthird');
+    }else if(Object.keys(storeData.Color).includes(clickedItem)){
+      history.push('/quotedetailfourth');
+    }else{
+      history.push('/quotedetailfive');
+    }
   }
 
   return (
